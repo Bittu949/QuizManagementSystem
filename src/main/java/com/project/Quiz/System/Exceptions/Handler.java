@@ -37,6 +37,7 @@ public class Handler {
                 HttpStatus.NOT_FOUND.value(),false,
                 e.getMessage(),null), HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(InvalidUsernameOrPasswordException.class)
     public ResponseEntity<ApiResponse<Object>> invalidUsernameOrPasswordHandler(InvalidUsernameOrPasswordException e){
         return new ResponseEntity<>(new ApiResponse<>(LocalDateTime.now(),
                 HttpStatus.UNAUTHORIZED.value(),false,
